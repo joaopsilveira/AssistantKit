@@ -236,7 +236,17 @@ extension Device {
 
     /// Return `true` if device has a notch
     static public var isNotched: Bool {
-        return isPhone && (screen == .inches_5_8 || screen == .inches_6_1 || screen == .inches_6_5 || screen == .inches_5_4 || screen == .inches_5_5 || screen == .inches_6_7)
+        return isPhone &&
+            (screen == .inches_5_8 ||
+                screen == .inches_6_1 ||
+                screen == .inches_6_5 ||
+                screen == .inches_5_4 ||
+                screen == .inches_5_5 ||
+                screen == .inches_6_7) &&
+            !(version == .phone8Plus ||
+                version == .phone7Plus ||
+                version == .phone6SPlus ||
+                version == .phone6Plus)
     }
 
     // MARK: Version
